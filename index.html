@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonoGrid MCP Diagram Studio</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111724'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23ff5f4d'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260309-2">
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div id="cursor-glow" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <header id="site-header" class="site-header">
+      <div class="brand-wrap">
+        <p class="brand-kicker">MCP-TEXT-TO-DIAGRAM</p>
+        <h1 id="header-title" class="brand-title">Home</h1>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#home" data-nav="home" class="is-active">Home</a>
+        <a href="#monogrid" data-nav="monogrid">MonoGrid</a>
+        <a href="#system" data-nav="system">System</a>
+        <a href="#about" data-nav="about">About Us</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle dark and light mode"
+        title="Toggle theme"
+      >
+        <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+        <span id="theme-toggle-label">Theme</span>
+      </button>
+    </header>
+
+    <main id="smooth-wrapper">
+      <div id="smooth-content" class="page-shell">
+        <section id="home" class="hero panel card" data-brand="Home">
+          <div class="hero-copy">
+            <p class="kicker" data-home-speed="0.92">Interactive Landing Studio</p>
+            <h2 data-home-speed="0.64">MonoGrid MCP Diagram Studio</h2>
+            <p class="subtitle" data-home-speed="0.82">
+              Convert prompts and images into visual graph structures with an
+              immersive interface, dynamic backgrounds, and interactive motion.
+            </p>
+
+            <div class="interaction-dock" data-home-speed="0.9">
+              <button class="fx-chip" data-fx="pulse" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="7"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+                Pulse
+              </button>
+              <button class="fx-chip" data-fx="warp" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 12h18M12 3v18"></path>
+                  <circle cx="12" cy="12" r="5"></circle>
+                </svg>
+                Warp
+              </button>
+              <button class="fx-chip" data-fx="scatter" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="6" cy="6" r="2"></circle>
+                  <circle cx="18" cy="8" r="2"></circle>
+                  <circle cx="8" cy="18" r="2"></circle>
+                  <circle cx="18" cy="18" r="2"></circle>
+                </svg>
+                Scatter
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-visuals" aria-hidden="true">
+            <img src="./ref/1Aqz17i-Mr5zMUPB_GQyQ5Q.webp" alt="" class="diagram-float diagram-a" data-home-speed="0.52" />
+            <img
+              src="./ref/Figure3_noCaption.png"
+              alt=""
+              class="diagram-float diagram-b"
+              data-home-speed="0.62"
+            />
+            <img src="./ref/19nUzdaTbKzJrAsq1qqJNNA.webp" alt="" class="diagram-float diagram-c" data-home-speed="0.74" />
+          </div>
+        </section>
+
+        <section id="monogrid" class="showcase panel card" data-brand="MonoGrid">
+          <div class="heading-wrap">
+            <h2 class="showcase-title">
+              <span class="clamp-text"
+                >Clamp
+                <svg viewBox="0 0 842.14 500" aria-hidden="true">
+                  <path
+                    class="draw"
+                    d="M336.2,130.05C261.69,118,16.52,122,20.65,244.29c4.17,123,484.3,299.8,734.57,108.37,244-186.65-337.91-311-546.54-268.47"
+                  />
+                </svg>
+              </span>
+              <span>your triggers</span>
+            </h2>
+            <p>
+              Scroll-driven visual storytelling with reusable transparent diagrams
+              from project assets.
+            </p>
+          </div>
+
+          <div id="monogrid-slideshow" class="showcase-slideshow" aria-label="Diagram slideshow">
+            <figure class="showcase-slide is-active">
+              <img src="./ref/copy-attention.png" alt="diagram asset 1" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="showcase-slide">
+              <img src="./ref/self_attention_thumbnail.png" alt="diagram asset 2" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="showcase-slide">
+              <img src="./ref/self-attention-typical-transformer-block.png" alt="diagram asset 3" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="showcase-slide">
+              <img src="./ref/Figure3_noCaption.png" alt="diagram asset 4" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="showcase-slide">
+              <img src="./ref/image-55.png" alt="diagram asset 5" loading="lazy" decoding="async" />
+            </figure>
+            <div class="showcase-dots" id="showcase-dots" aria-hidden="true"></div>
+          </div>
+        </section>
+
+        <section id="system" class="system panel" data-brand="System">
+          <div class="system-intro card">
+            <h2>System Overview</h2>
+            <p>
+              The studio combines prompt parsing, image context, and interactive
+              graph rendering into one continuous workflow.
+            </p>
+            <div class="feature-tags">
+              <span>Prompt Ingestion</span>
+              <span>Graph Structuring</span>
+              <span>Interactive Visualization</span>
+              <span>Theme-aware Rendering</span>
+            </div>
+          </div>
+
+          <section class="playground card">
+            <div class="form-section">
+              <h2>Playground</h2>
+              <p class="label-note">
+                Enter structured text, upload an image, or combine both.
+              </p>
+
+              <label for="text-input">Text Prompt</label>
+              <textarea
+                id="text-input"
+                rows="6"
+                placeholder="Example: Input -> Process -> Output"
+              ></textarea>
+
+              <label for="image-input">Image Input</label>
+              <input id="image-input" type="file" accept="image/*" />
+              <p id="file-name" class="file-name">No image selected</p>
+
+              <button id="render-btn" type="button">Render Graph</button>
+              <p id="status" class="status">Ready.</p>
+            </div>
+
+            <div class="result-section">
+              <div class="result-header">
+                <h3>Output</h3>
+                <p id="mode-badge" class="mode-badge">Mode: idle</p>
+              </div>
+
+              <div id="loader-wrap" class="loader-wrap hidden">
+                <div class="loader-stage">
+                  <svg
+                    class="pl"
+                    viewBox="0 0 420 420"
+                    width="420"
+                    height="420"
+                    role="img"
+                    aria-label="Stack of four LEGO bricks jumping left one stud at a time"
+                  >
+                    <defs>
+                      <symbol id="brick">
+                        <polygon fill="var(--brick-top)" points="70 0,140 39,70 125,0 39" />
+                        <polygon fill="var(--brick-left)" points="0 39,70 78,71 78,70 125,0 86" />
+                        <polygon points="70 78,140 39,140 86,70 125" />
+                        <use href="#studs" />
+                      </symbol>
+                      <symbol id="stud">
+                        <rect y="1" rx="14" ry="8" width="28" height="24" />
+                        <ellipse fill="var(--brick-top)" cx="14" cy="8" rx="14" ry="8" />
+                      </symbol>
+                      <symbol id="studs">
+                        <use href="#stud" transform="translate(21, 22)" />
+                        <use href="#stud" transform="translate(56, 3)" />
+                        <use href="#stud" transform="translate(56, 41)" />
+                        <use href="#stud" transform="translate(91, 22)" />
+                      </symbol>
+                    </defs>
+                    <g transform="translate(140, 218)">
+                      <g class="pl__brick-group">
+                        <g class="pl__brick-group pl__brick-group--1">
+                          <use class="pl__brick pl__brick--blue" href="#brick" />
+                          <g class="pl__brick-group pl__brick-group--2" transform="translate(0, -47)">
+                            <use class="pl__brick pl__brick--green" href="#brick" />
+                            <g class="pl__brick-group pl__brick-group--3" transform="translate(0, -47)">
+                              <use class="pl__brick pl__brick--orange" href="#brick" />
+                              <g class="pl__brick-group pl__brick-group--4" transform="translate(0, -47)">
+                                <use class="pl__brick pl__brick--red" href="#brick" />
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <p>Generating graph scene...</p>
+              </div>
+
+              <div id="diagram-output" class="diagram-output">
+                <p class="diagram-placeholder">
+                  Your generated diagram will appear here.
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section id="about" class="about panel card" data-brand="About Us">
+          <div class="about-head">
+            <p class="about-kicker">About</p>
+            <h2 class="about-title">The dream team behind intelligent diagram workflows.</h2>
+            <p class="about-subtitle">
+              We build practical prompt-to-diagram systems with interaction-first design,
+              transparent visualization layers, and fast frontend delivery.
+            </p>
+          </div>
+
+          <div class="about-grid" role="list">
+            <article class="team-card" role="listitem">
+              <div class="team-media">
+                <img src="./ref/1Aqz17i-Mr5zMUPB_GQyQ5Q.webp" alt="Profile visual for system architect" />
+                <span class="team-index">01</span>
+                <span class="team-chip">Aarav S.</span>
+              </div>
+              <div class="team-content">
+                <h3>System Architecture</h3>
+                <p>Designs the end-to-end MCP flow, state model, and rendering orchestration.</p>
+              </div>
+            </article>
+
+            <article class="team-card" role="listitem">
+              <div class="team-media">
+                <img src="./ref/19nUzdaTbKzJrAsq1qqJNNA.webp" alt="Profile visual for frontend engineer" />
+                <span class="team-index">02</span>
+                <span class="team-chip">Diya K.</span>
+              </div>
+              <div class="team-content">
+                <h3>Frontend Engineering</h3>
+                <p>Builds dynamic themes, section transitions, and interactive UI systems.</p>
+              </div>
+            </article>
+
+            <article class="team-card" role="listitem">
+              <div class="team-media">
+                <img src="./ref/self_attention_thumbnail.png" alt="Profile visual for visualization engineer" />
+                <span class="team-index">03</span>
+                <span class="team-chip">Rohan P.</span>
+              </div>
+              <div class="team-content">
+                <h3>Visualization Engineering</h3>
+                <p>Owns graph composition, diagram readability, and scene responsiveness.</p>
+              </div>
+            </article>
+
+            <article class="team-card" role="listitem">
+              <div class="team-media">
+                <img src="./ref/copy-attention.png" alt="Profile visual for QA and delivery engineer" />
+                <span class="team-index">04</span>
+                <span class="team-chip">Mira N.</span>
+              </div>
+              <div class="team-content">
+                <h3>QA and Delivery</h3>
+                <p>Maintains release quality, cross-browser stability, and performance checks.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <p>MonoGrid MCP Diagram Studio</p>
+          <p>Interactive landing experience for text-to-diagram workflows.</p>
+        </footer>
+      </div>
+    </main>
+
+    <script type="module" src="./app.js?v=20260309-2"></script>
+  </body>
+</html>
